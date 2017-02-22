@@ -39,6 +39,7 @@ set laststatus=2
 set backupdir=/tmp
 set directory=/tmp
 set shell=zsh
+set hlsearch
 syntax on
 autocmd CursorHold * checktime " hack for autoread
 
