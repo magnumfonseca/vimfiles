@@ -26,6 +26,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdtree'
 Bundle 'wookiehangover/jshint.vim'
+Bundle 'itmammoth/run-rspec.vim'
 
 " vim-scripts repos
 Bundle 'bufexplorer.zip'
@@ -69,7 +70,7 @@ colorscheme hemisu-custom
 
 " for ruby, autoindent with two spaces, always expand tabs
 autocmd FileType ruby,yaml,cucumber set ai sw=2 sts=2 et
-autocmd FileType eruby,html,javascript,scss set sw=4 ts=4 sts=4 noet
+autocmd FileType eruby,html,javascript,scss set sw=2 sts=2 et
 autocmd FileType python set sw=4 sts=4 et
 
 " mappings
@@ -80,13 +81,17 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 map <F2> :NERDTreeToggle<CR>
+vmap <F12> "+Y
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>a :Ack<space>
 nnoremap <leader>w <C-w><C-v>
 nnoremap Q <nop>
 nmap <C-c>r <Plug>SetTmuxVars
 imap <c-l> <space>=><space>
-
+nnoremap <leader>r :RunSpec<CR>
+nnoremap <leader>l :RunSpecLine<CR>
+nnoremap <leader>e :RunSpecLastRun<CR>
+nnoremap <leader>cr :RunSpecCloseResult<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
