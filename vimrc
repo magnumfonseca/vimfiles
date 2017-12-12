@@ -27,6 +27,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdtree'
 Bundle 'wookiehangover/jshint.vim'
 Bundle 'itmammoth/run-rspec.vim'
+Bundle 'leafgarland/typescript-vim'
 
 " vim-scripts repos
 Bundle 'bufexplorer.zip'
@@ -72,6 +73,15 @@ colorscheme hemisu-custom
 autocmd FileType ruby,yaml,cucumber set ai sw=2 sts=2 et
 autocmd FileType eruby,html,javascript,scss set sw=2 sts=2 et
 autocmd FileType python set sw=4 sts=4 et
+autocmd FileType typescript :set makeprg=tsc
+
+" make the QuickFix window automatically appear if :make has any errors.
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+" for type script ident chained method
+let g:typescript_indent_disable = 1
+
 
 " mappings
 nnoremap <C-J> <C-w>j<C-w>_
@@ -92,6 +102,14 @@ nnoremap <leader>r :RunSpec<CR>
 nnoremap <leader>l :RunSpecLine<CR>
 nnoremap <leader>e :RunSpecLastRun<CR>
 nnoremap <leader>cr :RunSpecCloseResult<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLUMN LIMIT
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+highlight ColorColumn ctermbg=gray
+let &colorcolumn=join(range(81,999),",")
+let &colorcolumn="80,".join(range(400,999),",")
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
