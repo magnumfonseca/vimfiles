@@ -18,7 +18,7 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'jgdavey/tslime.vim'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
@@ -28,6 +28,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'wookiehangover/jshint.vim'
 Bundle 'itmammoth/run-rspec.vim'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'bling/vim-airline'
 
 " vim-scripts repos
 Bundle 'bufexplorer.zip'
@@ -73,14 +74,14 @@ colorscheme hemisu-custom
 autocmd FileType ruby,yaml,cucumber set ai sw=2 sts=2 et
 autocmd FileType eruby,html,javascript,scss set sw=2 sts=2 et
 autocmd FileType python set sw=4 sts=4 et
-autocmd FileType typescript :set makeprg=tsc
+autocmd FileType typescript :set ai sw=2
 
 " make the QuickFix window automatically appear if :make has any errors.
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
 " for type script ident chained method
-let g:typescript_indent_disable = 1
+let g:typescript_indent_disable = 0
 
 
 " mappings
@@ -93,7 +94,7 @@ nnoremap <C-l> <C-w>l
 map <F2> :NERDTreeToggle<CR>
 vmap <F12> "+Y
 nnoremap <leader><space> :noh<cr>
-nnoremap <leader>a :Ack<space>
+nnoremap <leader>a :Ag<space>
 nnoremap <leader>w <C-w><C-v>
 nnoremap Q <nop>
 nmap <C-c>r <Plug>SetTmuxVars
