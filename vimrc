@@ -74,7 +74,7 @@ colorscheme hemisu-custom
 autocmd FileType ruby,yaml,cucumber set ai sw=2 sts=2 et
 autocmd FileType eruby,html,javascript,scss set sw=2 sts=2 et
 autocmd FileType python set sw=4 sts=4 et
-autocmd FileType typescript :set ai sw=2
+autocmd FileType typescript :set ai sw=2 sts=2 et
 
 " make the QuickFix window automatically appear if :make has any errors.
 autocmd QuickFixCmdPost [^l]* nested cwindow
@@ -96,6 +96,7 @@ vmap <F12> "+Y
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>a :Ag<space>
 nnoremap <leader>w <C-w><C-v>
+nnoremap <leader>q <C-w><C-S>
 nnoremap Q <nop>
 nmap <C-c>r <Plug>SetTmuxVars
 imap <c-l> <space>=><space>
